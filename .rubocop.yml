@@ -28,5 +28,4 @@ Style/RedundantFetchBlock:
   Enabled: false
 
 Style/GlobalStdStream:
-  Enabled: false
-  
+  Enabled: false  
