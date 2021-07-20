@@ -5,9 +5,9 @@ jobs:
       - image: circleci/ruby:2.7.2-node-browsers-legacy
       - image: circleci/postgres:12.1
         environment:
-          POSTGRES_USER: password
+          POSTGRES_USER: nastya
           POSTGRES_DB: rails_api_flow_auth_test
-          POSTGRES_PASSWORD: password   
+          POSTGRES_PASSWORD: nastya6  
     steps:
       - checkout
 
