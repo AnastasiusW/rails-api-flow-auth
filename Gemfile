@@ -36,6 +36,7 @@ group :development, :test do
   gem 'rubocop-rspec', '~> 2.4'
   gem 'reek', '~> 6.0', '>= 6.0.4'
   gem 'brakeman', '~> 5.0', '>= 5.0.4'
+  gem 'bundler-audit', '~> 0.8.0'
 end
 
 group :development do
