@@ -23,7 +23,15 @@ jobs:
           key: gem-cache-v1-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
+      - run:
+          name: Create Database
+          command: bundle exec rake db:create
+      - run:
+          name: Load Database Schema
+          command: bundle exec rake db:schema:load
 
       - run:
           name: Run tests
-          command: bundle exec rspec
+          command: |
+            TESTFILES=$(circleci tests glob “spec/**/*_spec.rb” |    circleci tests split)
+         bundle exec rspec — ${TESTFILES}
