@@ -11,18 +11,22 @@ jobs:
     steps:
       - checkout
 
+      # Restore bundle cache
       - restore_cache:
           keys:
-            - gem-cache-v1-{{ checksum "Gemfile.lock" }}
-            - gem-cache-v1-
+            - rails-demo-{{ checksum "Gemfile.lock" }}
+            - rails-demo-
 
+      # Bundle install dependencies
       - run:
           name: Install dependencies
-          command: |
-            bundle install --path vendor/bundle
+          command: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs 4 --retry 3
 
+      - run: sudo apt install -y postgresql-client || true
+
+      # Store bundle cache
       - save_cache:
-          key: gem-cache-v1-{{ checksum "Gemfile.lock" }}
+          key: rails-demo-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
 
