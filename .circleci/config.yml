@@ -37,9 +37,8 @@ jobs:
       - run:
           name: Set up DB
           command: |
-            bundle exec rake db:create 
-            bundle exec rails db:schema:load
-            bundle exec rake db:migrate
+            bundle exec rake db:create db:schema:load --trace
+            bundle exec rake db:migrat
 
 
       - run:
