@@ -32,6 +32,11 @@ jobs:
           key: rails-demo-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle  
+      - run:
+          name: Database Setup
+          command: |
+            bundle exec rake db:create
+            bundle exec rails db:schema:load
 
 
       - run:
