@@ -1,17 +1,16 @@
 version: 2.1
 jobs:
   build:
-    working_directory: ~/circleci-demo-ruby-rails
 
     docker:
       - image: circleci/ruby:2.7.2-node-browsers-legacy
         environment:
           PGHOST: localhost
-          PGUSER: nastya
+          PGUSER: postgres
           RAILS_ENV: test      
       - image: circleci/postgres:12.1
         environment:
-          POSTGRES_USER: nastya
+          POSTGRES_USER: postgres
           POSTGRES_DB: rails_api_flow_auth_test          
     steps:
       - checkout
