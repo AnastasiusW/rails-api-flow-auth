@@ -85,7 +85,7 @@ commands:
     - run:
         command: bundle exec reek -s app lib config spec bin db
         name: Run reek
-   rubocop:
+  rubocop:
     description: Run Rubocop
     parameters:
       files:
