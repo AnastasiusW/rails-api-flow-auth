@@ -10,7 +10,7 @@ jobs:
           RAILS_ENV: test      
       - image: circleci/postgres:12.1
         environment:
-          POSTGRES_USER: postgres
+          POSTGRES_USER: nastya
           POSTGRES_DB: rails_api_flow_auth_test          
     steps:
       - checkout
