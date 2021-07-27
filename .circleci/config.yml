@@ -51,19 +51,20 @@ jobs:
 
       - store_test_results:
           path: /tmp/test-results
-  
-      commands:
-        brakeman:
-          description: Run brakeman
-          parameters:
-            parallel:
-              default: true
-              description: brakeman vesion. default is latest
-              type: boolean
-          steps:
-          - run:
-              command: bundle exec brakeman -o brakeman-output.tabs --no-progress --separate-models
-                --exit-on-warn
-              name: Run brakeman
-              parallel: << parameters.parallel >>
+jobs:
+  linters: 
+    commands:
+      brakeman:
+        description: Run brakeman
+        parameters:
+          parallel:
+            default: true
+            description: brakeman vesion. default is latest
+            type: boolean
+        steps:
+        - run:
+            command: bundle exec brakeman -o brakeman-output.tabs --no-progress --separate-models
+              --exit-on-warn
+            name: Run brakeman
+            parallel: << parameters.parallel >>
                    
