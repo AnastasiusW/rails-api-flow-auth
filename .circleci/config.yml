@@ -39,6 +39,13 @@ jobs:
           bundle exec rake db:create
           bundle exec rake db:structure:load
 
+      - run:
+        name: Set up DB
+        command: |
+          bundle exec rake db:create 
+          bundle exec rails db:schema:load
+          bundle exec rake db:migrate
+
 
       - run:
           name: Run tests
