@@ -110,10 +110,5 @@ jobs:
               mkdir -p $rubocop_reports_dir
               bundle exec rubocop --require rubocop-rspec --out $rubocop_reports_dir/junit.xml --format progress
             files: << parameters.files >>
-            name: Run Rubocop
-                              
+            name: Run Rubocop                      
 
-workflows:  
-  jobs:
-    - build
-    - linters
