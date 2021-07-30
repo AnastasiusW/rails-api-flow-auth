@@ -113,8 +113,7 @@ jobs:
             name: Run Rubocop
                               
 
-workflows:
-  build_and_test:
-    jobs:
-      - build
-      - linters
+workflows:  
+  jobs:
+    - build
+    - linters
