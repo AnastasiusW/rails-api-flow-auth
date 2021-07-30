@@ -57,7 +57,7 @@ jobs:
           path: /tmp/test-results
           destination: test-results 
       
-      - linters
+      - linters:
 
 commands: 
   linters:
