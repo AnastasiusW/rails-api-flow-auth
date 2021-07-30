@@ -110,6 +110,6 @@ jobs:
           destination: test-results 
       
       - brakeman
-
-                    
-
+      - rails_best_practices
+      - reek
+      - rubocop                
