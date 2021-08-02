@@ -112,7 +112,7 @@ jobs:
       - brakeman
       - rails_best_practices
       - reek
-      - rubocop:
-          files: app/**/*.rb lib/**/*.rb config/**/*.rb spec/**/*.rb script/**/*.rb
-          report_dir: $CIRCLE_TEST_REPORTS
-                        
+      - run:
+          name: rubocop
+          command: |
+            bundle exec rubocop
