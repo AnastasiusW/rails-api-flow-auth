@@ -31,6 +31,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 6.2'
   gem 'ffaker', '~> 2.18'
+  gem 'overcommit', '~> 0.58.0'
   gem 'pry-byebug', '~> 3.9'
   gem 'pry-rails', '~> 0.3.9'
   gem 'rails_best_practices', '~> 1.21'
@@ -38,7 +39,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
   gem 'rubocop', '~> 1.18', '>= 1.18.3'
   gem 'rubocop-rspec', '~> 2.4'
-  gem 'overcommit', '~> 0.58.0'
 end
 
 group :development do
