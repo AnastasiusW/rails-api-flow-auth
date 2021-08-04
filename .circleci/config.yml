@@ -1,6 +1,4 @@
 version: 2.1
-orbs:
-  codecov: codecov/codecov@1.0.5
 
 commands:   
     brakeman:
@@ -91,14 +89,10 @@ jobs:
                             --format progress \
                             $TEST_FILES
     
-      - store_test_results:
-          path: ./reports/junit/
-      - store_artifacts:
-          path: coverage
-     
-      - codecov/upload:
-          file: coverage/coverage-final.json
-      
+      - artifacts:
+          paths:
+            - coverage/    
+            
       - brakeman
       - rails_best_practices
       - reek
