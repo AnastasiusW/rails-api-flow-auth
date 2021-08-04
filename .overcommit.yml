@@ -1,0 +1,18 @@
+RuboCop:
+  enabled: true
+  on_warn: fail
+  problem_on_unmodified_line: ignore 
+
+Fasterer:
+  enabled: true
+  on_warn: fail
+  problem_on_unmodified_line: ignore
+
+Reek:
+  enabled: true
+  on_warn: fail
+
+RailsBestPractices:
+  enabled: true
+  on_warn: fail
+  command: ['rails_best_practices', '--config', 'config/rails_best_practices.yml']
